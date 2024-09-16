@@ -1,3 +1,5 @@
+/* Defines the model of the data coming from the API */
+
 class Color {
   final String ral;
   final String rgb;
@@ -11,6 +13,7 @@ class Color {
   final String italian;
   final String dutch;
 
+  /* Defines required values and non-required */
   Color({
     required this.ral,
     required this.rgb,
@@ -25,6 +28,7 @@ class Color {
     required this.dutch,
   });
 
+  /* Deserialization */
   factory Color.fromJson(Map<String, dynamic> json) {
     return Color(
       ral: json['RAL'] ?? '',

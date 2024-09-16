@@ -17,6 +17,7 @@ class ColorProvider with ChangeNotifier {
 
   final ColorService _colorService = ColorService();
 
+  /* Executes the fetching from API */
   Future<void> fetchColors() async {
     try {
       _isLoading = true;
@@ -35,12 +36,14 @@ class ColorProvider with ChangeNotifier {
     }
   }
 
+  /* Updates the display colors */
   void updateDisplayColors(List<Color> colors) {
     _displayColors = colors;
     _currentIndex = 0;
     notifyListeners();
   }
 
+  /* Pagination / Navigation */
   void navigate(String direction) {
     if (direction == 'next') {
       _currentIndex =
@@ -53,6 +56,7 @@ class ColorProvider with ChangeNotifier {
     notifyListeners();
   }
 
+  /* Search and color update */
   void search(String term) {
     if (term.isEmpty) {
       updateDisplayColors(_colors);

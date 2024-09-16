@@ -1,3 +1,4 @@
+/* Sets the page for all colors coming from the API */
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../providers/color_provider.dart';
@@ -5,13 +6,15 @@ import '../widgets/color_card.dart';
 
 class AllColorsScreen extends StatefulWidget {
   @override
-  _AllColorsScreenState createState() => _AllColorsScreenState();
+  _AllColorsScreenState createState() =>
+      _AllColorsScreenState(); // State handling
 }
 
 class _AllColorsScreenState extends State<AllColorsScreen> {
   ScrollController _scrollController = ScrollController();
-  bool _showBackToTopButton = false;
+  bool _showBackToTopButton = false; // Back to top button
 
+  /* If scrolled makes the button appear, else it stays false */
   @override
   void initState() {
     super.initState();
@@ -28,6 +31,7 @@ class _AllColorsScreenState extends State<AllColorsScreen> {
     });
   }
 
+  /* Disposes the scroll controller */
   @override
   void dispose() {
     _scrollController.dispose();
@@ -38,6 +42,8 @@ class _AllColorsScreenState extends State<AllColorsScreen> {
     _scrollController.animateTo(0,
         duration: Duration(milliseconds: 500), curve: Curves.easeInOut);
   }
+
+  /* Appearance of the page */
 
   @override
   Widget build(BuildContext context) {

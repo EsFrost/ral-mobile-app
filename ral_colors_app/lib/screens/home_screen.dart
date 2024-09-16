@@ -1,3 +1,4 @@
+/* Sets the initial / home page */
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../providers/color_provider.dart';
@@ -15,7 +16,7 @@ class _HomeScreenState extends State<HomeScreen> {
   void initState() {
     super.initState();
     Future.microtask(() => context.read<ColorProvider>().fetchColors());
-  }
+  } // Fetch colors on init
 
   @override
   Widget build(BuildContext context) {
