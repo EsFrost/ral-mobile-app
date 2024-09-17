@@ -3,7 +3,7 @@
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
-        android:label="ral_colors_app"
+        android:label="RAL classic colors"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity
