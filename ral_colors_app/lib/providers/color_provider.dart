@@ -56,7 +56,7 @@ class ColorProvider with ChangeNotifier {
     notifyListeners();
   }
 
-  /* Search and color update */
+  /* Search functionality, added other languages too */
   void search(String term) {
     if (term.isEmpty) {
       updateDisplayColors(_colors);
@@ -64,7 +64,12 @@ class ColorProvider with ChangeNotifier {
       final results = _colors
           .where((color) =>
               color.ral.toLowerCase().contains(term.toLowerCase()) ||
-              color.english.toLowerCase().contains(term.toLowerCase()))
+              color.english.toLowerCase().contains(term.toLowerCase()) ||
+              color.german.toLowerCase().contains(term.toLowerCase()) ||
+              color.french.toLowerCase().contains(term.toLowerCase()) ||
+              color.spanish.toLowerCase().contains(term.toLowerCase()) ||
+              color.italian.toLowerCase().contains(term.toLowerCase()) ||
+              color.dutch.toLowerCase().contains(term.toLowerCase()))
           .toList();
       updateDisplayColors(results);
     }
